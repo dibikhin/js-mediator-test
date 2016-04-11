@@ -4,7 +4,9 @@ const app = require('./app');
 const printer = require('./printer');
 const report = require('./report');
 const customers = require('./customers');
-const payments = require('./payments');
+// const payments = require('./payments');
+const payments = require('./payments3');
+
 const interceptor = require('./interceptor');
 
 interceptor.init(mediator);

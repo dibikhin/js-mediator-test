@@ -15,5 +15,5 @@ function init(mediator) {
 }
 
 module.exports = {
-  init: init
+  init
 };
