@@ -7,3 +7,5 @@
 ## Start
 
 `npm start`
+
+Should print a log of actions without errors.

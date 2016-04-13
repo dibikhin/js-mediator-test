@@ -4,8 +4,7 @@ const app = require('./app');
 const printer = require('./printer');
 const report = require('./report');
 const customers = require('./customers');
-// const payments = require('./payments');
-const payments = require('./payments3');
+const payments = require('./payments');
 
 const interceptor = require('./interceptor');
 
@@ -22,3 +21,6 @@ console.log('Server starting...');
 console.log('Server started');
 
 app.run(mediator);
+
+// TODO extract fakes: customers, payments, report to print
+// TODO remove extra magic from customers.js
