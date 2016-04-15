@@ -3,12 +3,12 @@
 function run(mediator) {
   mediator.emit('app:starting');
 
-  let params = {
+  const params = {
     customers_ids: [1234, 2345]
   };
 
   mediator.emit('report:stats:get', params);
-  mediator.emit('report:stats:print', params);
+  mediator.emit('console:print', params);
 }
 
 module.exports = {

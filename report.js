@@ -1,22 +1,24 @@
 'use strict';
 
+const fakes = require('./fakes');
+
 function init(mediator) {
   mediator.on('report:stats:get', (params) => {
     mediator.emit('customers:get', params);
-    mediator.emit('payments:get', params);
 
     // to be sure that params is filled
     console.log('params:');
     console.log(params);
 
-    let stats_to_print = [
-      {
-        name: 'Lola', sum: 4012
-      }, {
-        name: 'Gary', sum: 0
-      }];
+    mediator.emit('payments:get', params);
 
-    params.stats_to_print = stats_to_print;
+    // to be sure that params is filled here too
+    console.log('params:');
+    console.log(params);
+
+    params.stats = fakes.stats;
+
+    mediator.emit('stats:format:pdf', params);
   });
 }
 

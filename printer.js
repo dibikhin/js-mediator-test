@@ -1,7 +1,7 @@
 function init(mediator) {
-  mediator.on('report:stats:print', (params) => {
+  mediator.on('console:print', (params) => {
     console.log('printer:');
-    console.log(params.stats_to_print);
+    console.log(params.stats_pdf);
   });
 }
 
