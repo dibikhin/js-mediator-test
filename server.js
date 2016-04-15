@@ -1,29 +1,21 @@
 const mediator = require('./mediator');
+const bootstrap = require('./bootstrap');
 
 const app = require('./app');
 
-const printer = require('./printer');
-const report = require('./report');
-const customers = require('./customers');
-const payments = require('./payments');
-
-const interceptor = require('./interceptor');
-
 console.log('Server starting...');
+console.log('Bootstrapping...');
 
-interceptor.init(mediator);
+bootstrap.init(
+  mediator, [
+    'printer', 'report', 'customers', 'payments', 'interceptor', 'app'
+  ]);
 
-printer.init(mediator);
-report.init(mediator);
-customers.init(mediator);
-payments.init(mediator);
-
-app.init(mediator);
-
-console.log('Server started');
+console.log('Bootstrapping done.');
+console.log('Server started.');
+console.log('App running...');
 
 app.run(mediator);
 
-// TODO extract fakes: customers, payments, report to print
-// TODO remove extra magic from customers.js
+// TODO extract fakes: customers, payments, stats to print
 // TODO all 'inits' should be run before first 'run'
