@@ -1,25 +1,22 @@
 'use strict';
 
 function init(mediator) {
-  mediator.on('report:stats:get', (customers_ids) => {
-    let report = { customers_ids };
-    mediator.emit('report:customers:get', report);
-  });
+  mediator.on('report:stats:get', (params) => {
+    mediator.emit('customers:get', params);
+    mediator.emit('payments:get', params);
 
-  mediator.on('report:customers:recieved', (report) => {
-    mediator.emit('report:payments:get', report);
+    // to be sure that params is filled
+    console.log('params:');
+    console.log(params);
 
-    // to be sure that it's filled
-    console.log('report:');
-    console.log(report);
-
-    let report_to_print = [{
-      name: 'Lola', sum: 4012
-    }, {
+    let stats_to_print = [
+      {
+        name: 'Lola', sum: 4012
+      }, {
         name: 'Gary', sum: 0
       }];
 
-    mediator.emit('report:print', report_to_print);
+    params.stats_to_print = stats_to_print;
   });
 }
 

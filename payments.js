@@ -1,11 +1,12 @@
 'use strict';
 
 function get_payments(params, callback) {
-  let payments = [{
-    id: 678,
-    customer: 1234,
-    sum: 1000
-  }, {
+  let payments = [
+    {
+      id: 678,
+      customer: 1234,
+      sum: 1000
+    }, {
       id: 697,
       customer: 1234,
       sum: 3012
@@ -15,7 +16,7 @@ function get_payments(params, callback) {
 }
 
 function init(mediator) {
-  mediator.on('report:payments:get', function(params) {
+  mediator.on('payments:get', function(params) {
     get_payments(params, function(err, payments) {
       params.payments = payments;
     });
