@@ -1,6 +1,6 @@
 'use strict';
 
-const fakes = require('./fakes');
+const fakes = require('../fakes');
 
 function get_payments(params, callback) {
   callback(null, fakes.payments);

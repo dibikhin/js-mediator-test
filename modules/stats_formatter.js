@@ -1,4 +1,4 @@
-const fakes = require('./fakes');
+const fakes = require('../fakes');
 
 function init(mediator) {
   mediator.on('stats:format:pdf', (params) => {

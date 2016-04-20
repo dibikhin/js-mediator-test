@@ -1,6 +1,6 @@
 'use strict';
 
-const fakes = require('./fakes');
+const fakes = require('../fakes');
 
 function init(mediator) {
   mediator.on('report:stats:get', (params) => {
