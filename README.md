@@ -13,9 +13,13 @@ Should print a log of actions without errors.
 ## TODO
 - introduce mediator's factory DONE
 - extract fakes: customers, payments, stats DONE
+- add tests
+- check events without subscribers, log warn
 - all 'inits' should be run before first 'run'
-- use '.lib/*' path
+- use '.lib/*' path DONE
 - subscribe to global 'error' event
+- add module loading logging DONE
+- convert explicit events to function calls?
 
 ## Info
 
@@ -24,5 +28,6 @@ Should print a log of actions without errors.
 - possible bugs:
     - forgot to bootstrap
     - forgot to subscribe
-    - module string names
+    - forgot to run
+    - module string names FIXED
     - events' names mismatch
